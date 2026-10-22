@@ -1,25 +1,23 @@
 # Nombre del estudiante: Esteban Víquez
-# Problema seleccionado: Cajero automático
-# Descripción: permite varios retiros sobre un saldo inicial,
-# valida el mínimo, el máximo y el saldo disponible,
-# y al final muestra el saldo restante y los retiros exitosos.
+# Problema: Cajero automático
 
 # --- Constantes ---
 SALDO_INICIAL = 250000
 RETIRO_MINIMO = 5000
 RETIRO_MAXIMO = 100000
 
-# --- Inicialización ---
+# --- Variables ---
 saldo_actual = SALDO_INICIAL
 retiros_exitosos = 0
 continuar_retirando = "s"
 
 print("===== CAJERO AUTOMÁTICO =====")
 
-# --- Ciclo principal ---
+# --- Ciclo de retiros ---
 while continuar_retirando == "s" and saldo_actual > 0:
     monto_retirar = int(input("Monto a retirar: "))
 
+    # Validaciones
     if monto_retirar < RETIRO_MINIMO:
         print("El retiro mínimo es ₡5000")
     elif monto_retirar > RETIRO_MAXIMO:
@@ -32,10 +30,9 @@ while continuar_retirando == "s" and saldo_actual > 0:
         retiros_exitosos = retiros_exitosos + 1
 
     print("Saldo actual", saldo_actual)
-
     continuar_retirando = input("¿Desea seguir retirando? (s/n): ")
 
-# --- Salida final ---
+# --- Resumen final ---
 print()
 print("Gracias por usar el cajero.")
 print("Le quedan", saldo_actual, "colones en su cuenta.")
