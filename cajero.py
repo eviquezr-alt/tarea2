@@ -9,9 +9,9 @@ RETIRO_MAXIMO = 100000
 # --- Variables ---
 saldo_actual = SALDO_INICIAL
 retiros_exitosos = 0
-continuar_retirando = "s"
 
 print("===== CAJERO AUTOMÁTICO =====")
+continuar_retirando = input("¿Desea realizar un retiro? (s/n): ")
 
 # --- Ciclo de retiros ---
 while continuar_retirando == "s" and saldo_actual > 0:
